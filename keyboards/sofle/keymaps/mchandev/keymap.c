@@ -232,16 +232,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case KC_LSTRT:
             if (record->event.pressed) {
-                register_code(KC_HOME);
+                register_mods(mod_config(MOD_LGUI));
+                register_code(KC_LEFT);
             } else {
-                unregister_code(KC_HOME);
+                unregister_mods(mod_config(MOD_LGUI));
+                unregister_code(KC_LEFT);
             }
             break;
         case KC_LEND:
             if (record->event.pressed) {
-                register_code(KC_END);
+                register_mods(mod_config(MOD_LGUI));
+                register_code(KC_RIGHT);
             } else {
-                unregister_code(KC_END);
+                unregister_mods(mod_config(MOD_LGUI));
+                unregister_code(KC_RIGHT);
             }
             break;
         case KC_DLINE:
