@@ -26,7 +26,14 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         } else {
             tap_code(KC_VOLU);
         }
-    } else if (index == 1) {
+    } else if (index == 1) { 
+        if(layer_state_is(_LOWER)){
+            if (clockwise){
+                tap_code(KC_PGDN);
+            } else{
+                tap_code(KC_PGUP);
+            }
+        }
         if (clockwise){
             tap_code(KC_MS_WH_DOWN);
         } else{
